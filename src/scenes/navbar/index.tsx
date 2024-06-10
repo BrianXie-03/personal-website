@@ -23,8 +23,9 @@ const Navbar = (props: Props) => {
                             <p>Brian Xie</p>
                         </div>
                         {/* INNER RIGHT OF RIGHT */}
-                        <div classname={`${flexBetween} gap-1 text-sm`}>
+                        <div className={`${flexBetween} gap-10 text-lg`}>
                             <p>About Me</p>
+                            <p>Experiences</p>
                             <p>Skills</p>
                             <p>Projects</p>
                             <p>Contact</p>
