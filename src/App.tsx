@@ -1,11 +1,18 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
 import Navbar from "@/scenes/navbar";
 
+enum SelectedPage {
+  AboutMe = "aboutme",
+  Experiences = "experiences",
+  Skills = "skills",
+  Projects = "Projects",
+  Contacts= "contacts"
+
+}
+
+
 function App() {
-  const [selectedPage, setSelectedPage] = useState<string>("About Me")
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.AboutMe);
   return( 
     <div className="app bg-sky-300 bg-opacity-60">
       <Navbar 
