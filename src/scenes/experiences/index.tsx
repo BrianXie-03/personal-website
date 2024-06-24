@@ -30,11 +30,30 @@ const experience: Array<ExperienceType> = [
     },
     {
         icon: <HomeModernIcon className="h-6 w-6" />,
-        title: "blah",
-        time: "August 2022 - May 2024",
-        description:"blah",
+        title: "Algorithm Problem Developer Intern",
+        time: "August 2023 - August 2023",
+        description:"Leveraged a deep understanding of programming concepts and instructional design principles to create engaging and effective evaluation problems. Designed a comprehensive curriculum under a tight deadline, ensuring it covers all essential fundamental skills",
     },
-]
+    {
+        icon: <HomeModernIcon className="h-6 w-6" />,
+        title: "title",
+        time: "time",
+        description:"description",
+    },
+    {
+        icon: <HomeModernIcon className="h-6 w-6" />,
+        title: "title",
+        time: "time",
+        description:"description",
+    },
+];
+
+const container ={
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.2},
+    }
+}
 
 const Experiences = ({setSelectedPage}: Props) => {
   return (
@@ -47,28 +66,35 @@ const Experiences = ({setSelectedPage}: Props) => {
             <motion.div
                 onViewportEnter={() => setSelectedPage(SelectedPage.Experiences)}  
             >
-                <div>
+                <motion.div>
                     <HText>Experience</HText>
                     <p className="my-5 text-sm">Here's a list of some of the experiences that I gain while I've been attending university!</p>
-                </div>
+                </motion.div>
 
                 {/* EXPERIENCES */}
-                <div className="mt-5 gap-8 items-center justify-between">
+                <motion.div 
+                    className="mt-5 gap-8 items-center justify-between"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{once: true, amount: 0.5}}
+                    variants={container}
+                    
+
+                >
                 {experience.map((experience: ExperienceType) => (
                      <div key={experience.title} className="w-full">
-                     <div className="bg-white rounded-lg shadow-md">
-                         {/* Adjust the content height inside the Experience component */}
-                         <Experience
-                             icon={experience.icon}
-                             title={experience.title}
-                             time={experience.time}
-                             description={experience.description}
-                             setSelectedPage={setSelectedPage}
-                         />
-                     </div>
-                 </div>
-             ))}
-            </div>
+                        <div className="bg-ice bg-opacity-40 rounded-lg shadow-lg">
+                            <Experience
+                                icon={experience.icon}
+                                title={experience.title}
+                                time={experience.time}
+                                description={experience.description}
+                                setSelectedPage={setSelectedPage}
+                            />
+                        </div>
+                    </div>
+                ))}
+                </motion.div>
             </motion.div>
         </div>
 

@@ -32,6 +32,7 @@ function App() {
 
       <Home setSelectedPage = {setSelectedPage} />
       <Experiences setSelectedPage = {setSelectedPage} />
+      {/* <Skills setSelectedPage = {setSelectedPage} /> */}
 
 
 
