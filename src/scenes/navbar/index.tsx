@@ -18,11 +18,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
     const flexBetween = "flex item-center justify-between";
     const [ isMenuToggled, setIsMenuToggled ] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-    const navbarBackground = isTopOfPage ? "" : "bg-gunmetal drop-shadow"
+    const navbarBackground = isTopOfPage ? "" : "bg-ice drop-shadow"
     
     return <nav>
         {/* MAIN  */}
-        <div className={`${navbarBackground}${flexBetween} fixed top-0 z-30 w-full py-10`}>
+        <div className={`${navbarBackground}${flexBetween} rounded-md fixed top-0 z-30 w-full py-10`}>
             {/* INNER PORTION */}
             <div className={`${flexBetween} mx-auto w-5/6`}>
                 {/* LEFT SIDE */}

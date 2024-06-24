@@ -1,19 +1,20 @@
 import { useEffect, useInsertionEffect, useState } from 'react'
 import Navbar from "@/scenes/navbar";
 import Home from '@/scenes/home'
+import Experiences from '@/scenes/experiences'
 import { SelectedPage } from "@/shared/types"
 
 
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.BrianXie);
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.AboutMe);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        setSelectedPage(SelectedPage.BrianXie);
+        setSelectedPage(SelectedPage.AboutMe);
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     }
@@ -30,6 +31,7 @@ function App() {
       />
 
       <Home setSelectedPage = {setSelectedPage} />
+      <Experiences setSelectedPage = {setSelectedPage} />
 
 
 
