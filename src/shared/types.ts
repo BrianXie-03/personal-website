@@ -14,3 +14,8 @@ export enum SelectedPage {
     time: string;
     description: string;
   }
+  
+  export interface SkillType {
+    icon: any;
+    title: string;
+  }

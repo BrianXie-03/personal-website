@@ -3,6 +3,7 @@ import Navbar from "@/scenes/navbar";
 import Home from '@/scenes/home'
 import Experiences from '@/scenes/experiences'
 import { SelectedPage } from "@/shared/types"
+import Skills from './scenes/skills';
 
 
 
@@ -32,7 +33,7 @@ function App() {
 
       <Home setSelectedPage = {setSelectedPage} />
       <Experiences setSelectedPage = {setSelectedPage} />
-      {/* <Skills setSelectedPage = {setSelectedPage} /> */}
+      <Skills setSelectedPage = {setSelectedPage} />
 
 
 
