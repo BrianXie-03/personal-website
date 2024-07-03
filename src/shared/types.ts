@@ -19,3 +19,11 @@ export enum SelectedPage {
     icon: any;
     title: string;
   }
+
+  export interface ProjectType {
+    projectHeader: string;
+    projectSubHeader: string;
+    projectDescription: string;
+    projectImage: string;
+    projectLink: string;
+  }

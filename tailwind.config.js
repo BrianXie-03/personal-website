@@ -12,6 +12,7 @@ export default {
       "gunmetal":"#162521",
       "outer":"#3C474B",
       "ice":"#9EEFE5",
+      "lighter": "#d8f9f5",
     },
     backgroundImage: (theme) => ({
       "gradient-yellowred":

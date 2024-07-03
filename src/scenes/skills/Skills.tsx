@@ -14,10 +14,10 @@ const Skills = ({ icon, title }: Props) => {
       transition={{ duration: 1 }}
       variants={{ hidden: {opacity: 0, scale: 0.9},
                   visible: {opacity: 1, scale: 1}}}
-      className="mt-5 rounded-full border-2 border-steel border-opacity-40 py-2 pt-10 text-center bg-gray-20"
+      className="mt-5 rounded-full border-2 border-steel border-opacity-40 py-2 pt-10 text-center bg-white shadow-md"
     >
       <div className="mb-2 flex justify-center">
-        <div className="rounded-full border-2 border-mint bg-primary-100 p-3">
+        <div className="rounded-full border-2 border-steel border-opacity-50 bg-primary-100 p-3">
           {icon}
         </div>
       </div>

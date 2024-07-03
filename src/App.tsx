@@ -4,8 +4,8 @@ import Home from '@/scenes/home'
 import Experiences from '@/scenes/experiences'
 import { SelectedPage } from "@/shared/types"
 import Skills from './scenes/skills';
-
-
+import Projects from './scenes/projects'
+import ContactUs from './scenes/contact'
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.AboutMe);
@@ -30,13 +30,11 @@ function App() {
         selectedPage = {selectedPage}
         setSelectedPage = {setSelectedPage}
       />
-
       <Home setSelectedPage = {setSelectedPage} />
       <Experiences setSelectedPage = {setSelectedPage} />
       <Skills setSelectedPage = {setSelectedPage} />
-
-
-
+      <Projects setSelectedPage = {setSelectedPage} />
+      <ContactUs setSelectedPage = {setSelectedPage} />
     </div>
   );
 }

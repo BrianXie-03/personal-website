@@ -1,6 +1,6 @@
 import { SkillType, SelectedPage } from "@/shared/types";
 import HText from "@/shared/HText";
-import sql from "@/assets/sql.jpg"
+import { sql } from "@/assets/images"
 import {
   SiLinux,
   SiReact,
@@ -97,7 +97,7 @@ const Skill = ({ setSelectedPage }: Props) => {
   return (
     <section 
         id="skills" 
-        className="bg-ice bg-opacity-40"
+        className="bg-lighter"
     >
       <div className="mx-auto min-h-full w-5/6 py-20">
         <motion.div
@@ -119,7 +119,7 @@ const Skill = ({ setSelectedPage }: Props) => {
           >
             <HText>Skills</HText>
             <p className={`my-5 md:text-lg`}>
-              Some technologies I'm familiar with.
+              Here are some technologies that I am familar with.
             </p>
           </motion.div>
 
