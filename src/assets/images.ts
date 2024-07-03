@@ -5,9 +5,9 @@ import bunnies from "@/assets/bunnies.png";
 import fracture from "@/assets/fracture.png";
 import salary from "@/assets/salary.png";
 import aces from "@/assets/aces.png"
-import logo from "@/assets/logo.png"
+import b from "@/assets/b.png"
 import personal from "@/assets/PersonalPhoto.jpg"
 import sql from "@/assets/sql.jpg"
 import technica from "@/assets/technica.png"
 
-export { debuggies, packets, bunnies, fracture, salary, aces, logo, personal, sql, technica };
+export { debuggies, packets, bunnies, fracture, salary, aces, b, personal, sql, technica };
