@@ -1,6 +1,4 @@
-import HText from "@/shared/HText";
 import { motion } from "framer-motion";
-import { SiGithub } from "react-icons/si"
 
 type Props = {
   projectHeader: string;

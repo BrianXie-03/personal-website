@@ -1,11 +1,10 @@
 import { useForm } from "react-hook-form";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import { BsFiletypePdf, BsDownload } from "react-icons/bs"
+import { BsDownload } from "react-icons/bs"
 import HText from "@/shared/HText";
 import { SiLinkedin, SiGithub,  } from "react-icons/si" 
 import { IoNewspaperOutline } from "react-icons/io5";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import resume from "/Brian Xie - Resume.pdf"
 import { GoLinkExternal } from "react-icons/go";
 

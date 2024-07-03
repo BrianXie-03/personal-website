@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 import Experience from './Experience';
 import { aces, technica } from "@/assets/images";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
-import useMediaQuery from '@/hooks/useMediaQuery';
-
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;

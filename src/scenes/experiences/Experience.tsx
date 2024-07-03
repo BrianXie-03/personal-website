@@ -14,7 +14,7 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Experience = ({ icon, title, time, description, setSelectedPage }: Props) => {
+const Experience = ({ icon, title, time, description }: Props) => {
   return (
     <motion.div 
         className="mt-2 px-5 py-4 text-center md:grid-cols-3"
