@@ -26,15 +26,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                 {/* LEFT SIDE */}
                 <div className={`${flexBetween} w-full `}>
                     <div className={`${flexBetween} mx-left gap-4 text-lg font-bold`}>
-                        <img
-                            alt="b"
-                            src={b}
-                            className="w-6 h-auto"
-                        />
-                        <div className="font-bold">
-                            <Link page = "Brian Xie"
-                                selectedPage = {selectedPage}
-                                setSelectedPage = {setSelectedPage}
+                        <div className={`flex items-center gap-1 whitespace-nowrap`}>
+                            <img alt="logo" src={b} className="w-[30px] "/>
+                            <Link page = "Brian"
+                                  selectedPage = {selectedPage}
+                                  setSelectedPage = {setSelectedPage}
                             />
                         </div>
                     </div>
