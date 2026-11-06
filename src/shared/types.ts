@@ -1,6 +1,7 @@
 export enum SelectedPage {
     BrianXie= "brianxie",
     AboutMe = "aboutme",
+    Education = "education",
     Experiences = "experiences",
     Skills = "skills",
     Projects = "projects",
@@ -12,7 +13,8 @@ export enum SelectedPage {
     icon: any;
     title: string;
     time: string;
-    description: string;
+    description?: string;
+    progression?: Array<{ title: string; time?: string; description: string }>;
   }
   
   export interface SkillType {
