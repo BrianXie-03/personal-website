@@ -7,12 +7,12 @@ export default {
       "gray-50": "#EFE6E6",
       "gray-100": "#DFCCCC",
       "gray-500": "#5E0000",
-      "steel":"#4F7CAC",
-      "mint":"#C0E0DE",
-      "gunmetal":"#162521",
-      "outer":"#3C474B",
-      "ice":"#9EEFE5",
-      "lighter": "#d8f9f5",
+      "steel":"#8CA5B8",
+      "mint":"#0B1014",
+      "gunmetal":"#F5F7FA",
+      "outer":"#C9D5E1",
+      "ice":"#D7E3EE",
+      "lighter": "#111B22",
     },
     backgroundImage: (theme) => ({
       "gradient-yellowred":

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Link from "./Link";
-import { b } from "@/assets/images";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
@@ -12,22 +11,17 @@ type Props = {
 };
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
-    {/* SPACING NAVBAR */}
-    const flexBetween = "flex item-center justify-between";
+    const flexBetween = "flex items-center justify-between";
     const [ isMenuToggled, setIsMenuToggled ] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-    const navbarBackground = isTopOfPage ? "" : "bg-lighter drop-shadow"
+    const navbarBackground = isTopOfPage ? "bg-[#0b1014]/80 backdrop-blur-sm" : "bg-[#121b22]/90 backdrop-blur-sm"
     
     return <nav>
-        {/* MAIN  */}
-        <div className={`${navbarBackground}${flexBetween} rounded-md fixed top-0 z-30 w-full py-10 shadow-md`}>
-            {/* INNER PORTION */}
-            <div className={`${flexBetween} mx-auto w-5/6`}>
-                {/* LEFT SIDE */}
-                <div className={`${flexBetween} w-full `}>
-                    <div className={`${flexBetween} mx-left gap-4 text-lg font-bold`}>
-                        <div className={`flex items-center gap-1 whitespace-nowrap`}>
-                            <img alt="logo" src={b} className="w-[30px] "/>
+        <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full border-b border-white/10 py-4`}>
+            <div className={`${flexBetween} mx-auto w-[min(100%,72rem)] px-4 md:px-0`}>
+                <div className={`${flexBetween} w-full`}>
+                    <div className={`${flexBetween} gap-4 text-lg font-medium`}>
+                        <div className="flex items-center whitespace-nowrap">
                             <Link page = "Brian Xie"
                                   selectedPage = {selectedPage}
                                   setSelectedPage = {setSelectedPage}
@@ -36,16 +30,14 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                     </div>
                 </div>
                 
-                {/* RIGHT SIDE */}
-                <div className={`${flexBetween} w-full`}>
-                    {/* INNER LEFT OF RIGHT */}
-                    <div className={`${flexBetween} mx-right gap-20 text-lg`}>
-
-                    </div>
-                    {/* INNER RIGHT OF RIGHT */}
+                <div className={`${flexBetween} w-full justify-end`}>
                     {isAboveMediumScreens ? (
-                        <div className={`${flexBetween} gap-10 text-lg `}>
+                        <div className={`${flexBetween} gap-8 text-sm`}>
                         <Link page = "About Me"
+                                selectedPage = {selectedPage}
+                                setSelectedPage = {setSelectedPage}
+                        />
+                        <Link page = "Education"
                                 selectedPage = {selectedPage}
                                 setSelectedPage = {setSelectedPage}
                         />
@@ -66,28 +58,28 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                                 setSelectedPage = {setSelectedPage}
                         />
                     </div>) : (
-                        <button className="rounded-full bg-steel p-2"
+                        <button className="rounded-full border border-white/10 bg-white/5 p-2"
                         onClick={() => setIsMenuToggled(!isMenuToggled)}
                         >
-                            <Bars3Icon className="h-6 w-6 text-white"/>
+                            <Bars3Icon className="h-5 w-5 text-white"/>
                         </button>
                     )}
                 </div>
             </div>
-            {/* </div> */}
         </div>
-        {/* MOBILE MENU MODAL*/}
         {!isAboveMediumScreens && isMenuToggled && (
-            <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-lighter drop-shadow-xl">
-                {/* CLOSE ICON */}
-                <div className="flex justify-end p-12">
+            <div className="fixed right-0 bottom-0 z-40 h-full w-[280px] border-l border-white/10 bg-[#1b262c] p-8 shadow-2xl">
+                <div className="flex justify-end">
                     <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                        <XMarkIcon className= "h-6 w-6 text-gray-400"></XMarkIcon>
+                        <XMarkIcon className= "h-6 w-6 text-slate-300"></XMarkIcon>
                     </button>
                 </div>
-                {/* MENU ITEMS */}
-                <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+                <div className="mt-12 flex flex-col gap-8 text-lg">
                             <Link page = "About Me"
+                                  selectedPage = {selectedPage}
+                                  setSelectedPage = {setSelectedPage}
+                            />
+                            <Link page = "Education"
                                   selectedPage = {selectedPage}
                                   setSelectedPage = {setSelectedPage}
                             />

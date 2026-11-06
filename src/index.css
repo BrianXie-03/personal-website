@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,11 +8,87 @@ html,
 body,
 #root,
 .app {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: "DM Sans", sans-serif;
-  @apply text-gunmetal;
+  background: #0b1014;
+  color: #edf3fb;
 }
+
+body {
+  margin: 0;
+  background: #0b1014;
+  text-rendering: optimizeLegibility;
+  color: #edf3fb;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+::selection {
+  color: #0b1014;
+  background: #a8c5d8;
+}
+
+:focus-visible {
+  outline: 2px solid #a8c5d8;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 .boldText {
   font-weight: bold;
+}
+
+.app {
+  position: relative;
+  isolation: isolate;
+}
+
+.app::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(75deg, transparent 0 11.96%, rgb(61 151 220 / 8%) 12%, transparent 12.04%),
+    linear-gradient(112deg, transparent 0 7.96%, rgb(61 151 220 / 10%) 8%, transparent 8.04%),
+    linear-gradient(127deg, transparent 0 16.96%, rgb(61 151 220 / 12%) 17%, transparent 17.04%),
+    linear-gradient(136deg, transparent 0 31.96%, rgb(61 151 220 / 9%) 32%, transparent 32.04%),
+    linear-gradient(104deg, transparent 0 26.96%, rgb(61 151 220 / 8%) 27%, transparent 27.04%),
+    linear-gradient(121deg, transparent 0 36.96%, rgb(61 151 220 / 11%) 37%, transparent 37.04%),
+    linear-gradient(98deg, transparent 0 51.96%, rgb(61 151 220 / 8%) 52%, transparent 52.04%),
+    linear-gradient(68deg, transparent 0 46.96%, rgb(61 151 220 / 9%) 47%, transparent 47.04%),
+    linear-gradient(116deg, transparent 0 56.96%, rgb(61 151 220 / 12%) 57%, transparent 57.04%),
+    linear-gradient(82deg, transparent 0 71.96%, rgb(61 151 220 / 9%) 72%, transparent 72.04%),
+    linear-gradient(133deg, transparent 0 66.96%, rgb(61 151 220 / 8%) 67%, transparent 67.04%),
+    linear-gradient(73deg, transparent 0 76.96%, rgb(61 151 220 / 11%) 77%, transparent 77.04%),
+    linear-gradient(129deg, transparent 0 91.96%, rgb(61 151 220 / 8%) 92%, transparent 92.04%),
+    linear-gradient(109deg, transparent 0 86.96%, rgb(61 151 220 / 9%) 87%, transparent 87.04%),
+    linear-gradient(124deg, transparent 0 95.96%, rgb(61 151 220 / 10%) 96%, transparent 96.04%);
+  content: "";
+  pointer-events: none;
 }

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 type Props = {
   icon: any;
   title: string;
@@ -7,23 +5,10 @@ type Props = {
 
 const Skills = ({ icon, title }: Props) => {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.75 }}
-      transition={{ duration: 1 }}
-      variants={{ hidden: {opacity: 0, scale: 0.9},
-                  visible: {opacity: 1, scale: 1}}}
-      className="mt-5 rounded-full border-2 border-steel border-opacity-40 py-2 pt-10 text-center bg-white shadow-md"
-    >
-      <div className="mb-2 flex justify-center">
-        <div className="rounded-full border-2 border-steel border-opacity-50 bg-primary-100 p-3">
-          {icon}
-        </div>
-      </div>
-
-      <h4 className="font-bold text-2xl text-gunmetal">{title}</h4>
-    </motion.div>
+    <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-[#111a21] px-3.5 py-2.5 transition-colors hover:border-white/20 hover:bg-white/[0.04]">
+      <span className="flex h-5 w-5 shrink-0 items-center justify-center">{icon}</span>
+      <span className="text-sm font-medium text-slate-200">{title}</span>
+    </div>
   );
 };
 

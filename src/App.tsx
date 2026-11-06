@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from "@/scenes/navbar";
 import Home from '@/scenes/home'
+import Education from '@/scenes/education'
 import Experiences from '@/scenes/experiences'
 import { SelectedPage } from "@/shared/types"
 import Skills from './scenes/skills';
@@ -24,13 +25,14 @@ function App() {
   }, [])
 
   return( 
-    <div className="app bg-mint">
+    <div className="app">
       <Navbar
         isTopOfPage={isTopOfPage} 
         selectedPage = {selectedPage}
         setSelectedPage = {setSelectedPage}
       />
       <Home setSelectedPage = {setSelectedPage} />
+      <Education setSelectedPage = {setSelectedPage} />
       <Experiences setSelectedPage = {setSelectedPage} />
       <Skills setSelectedPage = {setSelectedPage} />
       <Projects setSelectedPage = {setSelectedPage} />

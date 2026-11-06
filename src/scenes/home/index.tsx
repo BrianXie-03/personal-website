@@ -12,72 +12,68 @@ const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
 
   return (
-    <section
-      id="aboutme"
-      className="gap-16 bg-lighter py-10 md:h-full md:py-0"
-    >
-      {/* IMAGE AND MAIN HEADER */}
+    <section id="aboutme" className="relative py-20 md:py-24">
       <motion.div 
-        className="md:flex mx-auto w-5/6 items-center justify-center md:h-5/6"
+        className="mx-auto flex w-[min(100%,72rem)] flex-col gap-8 px-4 md:flex-row md:items-center md:justify-between md:gap-12 md:px-0"
         onViewportEnter={() => setSelectedPage(SelectedPage.AboutMe)}  
       >
-        {/* MAIN HEADER */}
-        <div className="z-10 mt-32 md:basis-4/5">
-          {/* HEADINGS */}
+        <div className="max-w-xl md:max-w-[38rem]">
           <motion.div
-            className="md:-mt-20"
             initial="hidden"
-            whileInView="visable"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.5}}
             transition={{ duration: 0.5}}
             variants={{
-              hidden: { opacity: 0, x:-50 },
-              visable: { opacity: 1, x: 0},
+              hidden: { opacity: 0, x:-30 },
+              visible: { opacity: 1, x: 0},
             }}
           >
-              <div className="text-6xl font-bold">
-                <p>Brian Xie</p>
-              </div>
-            <p className="mt-4 text-lg">
-              Hello, my name is Brian Xie and I am currently a rising junior at the University of Maryland College-Park, expected to graduate in Spring 2026.
-              I am pursuing a Bachelors of Science in Computer Science: Machine Learning and Applied Mathematics alongside recieving a certification in
-              Cybersecurity.
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+              Computer Science • Applied Mathematics
             </p>
+            <div className="mt-5 text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+              <p>Brian Xie</p>
+            </div>
+            <div className="mt-6 space-y-4 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              <p>
+                Hi, I’m Brian, a software engineer and researcher passionate about building thoughtful products and solutions. Aside from work, I’ve been exploring new hobbies and interests, including photography, video editing, and fitness.
+              </p>
+              <p>
+                I’m currently employed as a Software Development Engineer at Publicis Sapient, working alongside clients to build thoughtful products and solutions. My interests lie in software development, research, and building products that make a positive impact on people’s lives.
+              </p>
+            </div>
           </motion.div>
-          {/* ACTIONS */}
+
           <motion.div 
-            className="mt-6 flex"
+            className="mt-7 flex"
             initial="hidden"
-            whileInView="visable"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.5}}
-            transition={{ delay: 0.2, duration: 0.5}}
+            transition={{ delay: 0.15, duration: 0.5}}
             variants={{
-              hidden: { opacity: 0, x:-50 },
-              visable: { opacity: 1, x: 0},
+              hidden: { opacity: 0, x:-30 },
+              visible: { opacity: 1, x: 0},
             }}  
           >
             <AnchorLink
-              className="text-lg font-bold text-gunmetal underline rounded-sm bg-mint shadow-sm py-2 px-6"
+              className="rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium uppercase tracking-[0.12em] text-slate-100 transition duration-300 hover:border-white/20 hover:bg-white/10"
               onClick={() => setSelectedPage(SelectedPage.Contacts)}
               href={`#${SelectedPage.Contacts}`}  
             >
-              Learn More
+              Contact
             </AnchorLink>
           </motion.div>
-
         </div>
-        {/* IMAGE */}
-        {
-          (isAboveMediumScreens) ? (
-            <div className="flex basis-4/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end border-steel">
-              <img alt="home-personal" src={PersonalPhoto}/>
-            </div>
-          ) : (
-            <div className="flex basis-4/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end py-4 border-steel">
-              <img alt="home-personal" src={PersonalPhoto}/>
-            </div>
-          )
-        }
+
+        {(isAboveMediumScreens) ? (
+          <div className="flex w-full max-w-[320px] justify-center md:justify-end">
+            <img alt="Brian Xie" src={PersonalPhoto} className="w-full rounded-2xl border border-white/10 object-cover shadow-2xl shadow-black/20"/>
+          </div>
+        ) : (
+          <div className="flex w-full justify-center">
+            <img alt="Brian Xie" src={PersonalPhoto} className="w-full max-w-[300px] rounded-2xl border border-white/10 object-cover shadow-2xl shadow-black/20"/>
+          </div>
+        )}
       </motion.div>
     </section>
   )

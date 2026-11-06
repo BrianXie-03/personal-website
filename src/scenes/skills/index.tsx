@@ -4,108 +4,82 @@ import { sql } from "@/assets/images"
 import {
   SiLinux,
   SiReact,
-  SiTypescript,
   SiJavascript,
   SiC,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
   SiPython,
-  SiOcaml,
+  SiGit,
+  SiAmazonaws,
+  SiAzuredevops,
+  SiFirebase,
+  SiNuxtdotjs,
+  SiVuedotjs,
+  SiR,
   SiRust,
-  SiTensorflow,
-  SiPandas,
+  SiScala,
 } from "react-icons/si";
 import { BiLogoJava } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { GrDatabase } from "react-icons/gr";
+import { VscTerminalLinux } from "react-icons/vsc";
+import { HiOutlineSparkles } from "react-icons/hi";
 import Skills from "./Skills";
 
-
-const iconType = "h-6 w-6 text-black";
+const iconType = "h-6 w-6 text-slate-200";
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const skills: Array<SkillType> = [
-    {
-      icon: <BiLogoJava className={iconType} />,
-      title: "Java",
-    },
-    {
-      icon: <SiC className={iconType} />,
-      title: "C",
-    },
-    {
-      icon: <SiPython className={iconType} />,
-      title: "Python",
-    },
-    {
-        icon: <SiRust className={iconType} />,
-        title: "Rust",
-    },
-    {
-      icon: <SiOcaml className={iconType} />,
-      title: "OCaml",
-    },
-    {
-      icon: <SiJavascript className={iconType} />,
-      title: "Javascript",
-    },
-    {
-      icon: <SiTypescript className={iconType} />,
-      title: "Typescript",
-    },
-    {
-      icon: <SiHtml5 className={iconType} />,
-      title: "HTML",
-    },
-    {
-      icon: <SiCss3 className={iconType} />,
-      title: "CSS",
-    },
-    {
-      icon: <SiTensorflow className={iconType} />,
-      title: "TensorFlow",
-    },
-    {
-      icon: <SiPandas className={iconType} />,
-      title: "Pandas",
-    },
-    {
-      icon: <SiReact className={iconType} />,
-      title: "React",
-    },
-    {
-      icon: <SiTailwindcss className={iconType} />,
-      title: "Tailwind CSS",
-    },
-    {
-      icon: <SiLinux className={iconType} />,
-      title: "Linux OS",
-    },
-    {
-        icon: <div className="h-6 w-6 text-primary-500">
-                <img alt="aces" src={sql}/>
-              </div>,
-        title: "SQL",
-      },
-  ];
+const skillGroups: { title: string; skills: Array<SkillType> }[] = [
+  {
+    title: "Languages & Data",
+    skills: [
+      { icon: <SiPython className={iconType} />, title: "Python" },
+      { icon: <BiLogoJava className={iconType} />, title: "Java" },
+      { icon: <SiJavascript className={iconType} />, title: "JavaScript" },
+      { icon: <SiC className={iconType} />, title: "C" },
+      { icon: <VscTerminalLinux className={iconType} />, title: "Bash" },
+      { icon: <div className="h-6 w-6"><img alt="" src={sql} /></div>, title: "SQL" },
+      { icon: <SiR className={iconType} />, title: "R" },
+      { icon: <SiRust className={iconType} />, title: "Racket" },
+      { icon: <SiScala className={iconType} />, title: "Scala" },
+    ],
+  },
+  {
+    title: "Frameworks & APIs",
+    skills: [
+      { icon: <SiReact className={iconType} />, title: "React" },
+      { icon: <SiVuedotjs className={iconType} />, title: "Vue.js" },
+      { icon: <SiNuxtdotjs className={iconType} />, title: "Nuxt.js" },
+      { icon: <HiOutlineSparkles className={iconType} />, title: "LangChain" },
+      { icon: <GrDatabase className={iconType} />, title: "REST APIs" },
+    ],
+  },
+  {
+    title: "Cloud & Tools",
+    skills: [
+      { icon: <SiAmazonaws className={iconType} />, title: "AWS" },
+      { icon: <SiAzuredevops className={iconType} />, title: "Azure" },
+      { icon: <SiFirebase className={iconType} />, title: "Firebase" },
+      { icon: <SiGit className={iconType} />, title: "Git" },
+      { icon: <SiLinux className={iconType} />, title: "Linux" },
+    ],
+  },
+];
 
 const Skill = ({ setSelectedPage }: Props) => {
 
   return (
     <section 
         id="skills" 
-        className="bg-lighter"
+        className="bg-[#1b262c]"
     >
-      <div className="mx-auto min-h-full w-5/6 py-20">
+      <div className="mx-auto w-[min(100%,72rem)] px-4 py-16 md:px-0">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Skills)}
         >
-          {/* HEADER */}
           <motion.div
-            className="md:my-5 md:w-3/5"
+            className="md:my-5 md:max-w-2xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -118,27 +92,23 @@ const Skill = ({ setSelectedPage }: Props) => {
             }}
           >
             <HText>Skills</HText>
-            <p className={`my-5 md:text-lg`}>
-              Here are some technologies that I am familar with.
+            <p className="my-5 text-slate-300 md:text-lg">
+              Languages, frameworks, and tools I've taken the time to learn and work with.
             </p>
           </motion.div>
 
-          {/* SKILLS */}
-          <motion.div
-            className="items-center justify-between gap-3 sm:grid sm:grid-cols-3 md:grid md:grid-cols-5"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {skills.map((skill: SkillType) => (
-                <div key={skill.title} className="w-full">
-                    <Skills
-                        icon={skill.icon}
-                        title={skill.title}
-                    />
+          <div className="grid gap-5 lg:grid-cols-3">
+            {skillGroups.map((group) => (
+              <section key={group.title} className="rounded-2xl border border-white/[0.12] bg-[#0f4c75]/35 p-5 sm:p-6">
+                <h3 className="text-base font-semibold text-white sm:text-lg">{group.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2.5">
+                  {group.skills.map((skill) => (
+                    <Skills key={skill.title} icon={skill.icon} title={skill.title} />
+                  ))}
                 </div>
+              </section>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
